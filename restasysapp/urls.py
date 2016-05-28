@@ -10,5 +10,10 @@ urlpatterns = [
     url(r'^pratos/list/$', views.pratos_list, name='pratos_list'),
     url(r'^pedidos/list/$', views.pedidos_list, name='pedidos_list'),
     url(r'^mesa/(?P<pk>[0-9]+)/$', views.mesa_detalhe),
+    url(r'^mesa/(?P<pk>[0-9]+)/edit/$', views.mesa_editar, name='mesa_editar'),
+    url(r'^prato/(?P<pk>[0-9]+)/$', views.prato_detalhe),
+    url(r'^prato/(?P<pk>[0-9]+)/edit/$', views.prato_editar, name='prato_editar'),
+    url(r'^pedido/(?P<pk>[0-9]+)/$', views.pedido_detalhe),
+    url(r'^pedido/(?P<pk>[0-9]+)/edit/$', views.pedido_editar, name='pedido_editar'),
 
 ]

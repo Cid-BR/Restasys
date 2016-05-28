@@ -52,3 +52,47 @@ def pedidos_list(request):
 def mesa_detalhe(request, pk):
     mesa = get_object_or_404(Mesa, pk=pk)
     return render(request, 'restasysapp/mesa_detalhe.html', {'mesa':mesa})
+
+def mesa_editar(request, pk):
+    mesa = get_object_or_404(Mesa, pk=pk)
+    if request.method == "POST":
+        form = MesaForm(request.POST, instance=mesa)
+        if form.is_valid():
+            mesa = form.save(commit=False)
+            mesa = form.save()
+            form = MesaForm()
+    else:
+        form = MesaForm(instance=mesa)
+    return render(request, 'restasysapp/mesa_novo.html', {'form': form})
+
+def prato_detalhe(request, pk):
+    prato = get_object_or_404(Pratos, pk=pk)
+    return render(request, 'restasysapp/prato_detalhe.html', {'prato':prato})
+
+def prato_editar(request, pk):
+    prato = get_object_or_404(Pratos, pk=pk)
+    if request.method == "POST":
+        form = PratosForm(request.POST, instance=prato)
+        if form.is_valid():
+            prato = form.save(commit=False)
+            prato = form.save()
+            form = PratosForm()
+    else:
+        form = PratosForm(instance=prato)
+    return render(request, 'restasysapp/prato_novo.html', {'form': form})
+
+def pedido_detalhe(request, pk):
+    pedido = get_object_or_404(Pedidos, pk=pk)
+    return render(request, 'restasysapp/pedido_detalhe.html', {'pedido':pedido})
+
+def pedido_editar(request, pk):
+    pedido = get_object_or_404(Pedidos, pk=pk)
+    if request.method == "POST":
+        form = PedidosForm(request.POST, instance=pedido)
+        if form.is_valid():
+            pedido = form.save(commit=False)
+            pedido = form.save()
+            form = PedidosForm()
+    else:
+        form = PedidosForm(instance=pedido)
+    return render(request, 'restasysapp/pedido_novo.html', {'form': form})

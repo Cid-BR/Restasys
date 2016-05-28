@@ -3,7 +3,7 @@
 {% block content %}
     {% for pedido in pedidos %}
       <div class="pedido">
-          <p>Mesa: {{pedido.mesa_id}}</p>
+          <a href="{% url 'restasysapp.views.pedido_detalhe' pk=pedido.pk %}"><p>Mesa: {{pedido.mesa_id}}</p></a>
           <p>Prato: {{pedido.pratos_id}}</p>
           <p>Valor total: {{pedido.valor_total}}</p>
           <hr>

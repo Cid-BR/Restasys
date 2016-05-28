@@ -1,12 +1,13 @@
 {% extends 'restasysapp/base.html' %}
 
 {% block content %}
-    {% for prato in pratos %}
+
       <div class="pratos">
-          <a href="{% url 'restasysapp.views.prato_detalhe' pk=prato.pk %}"><p>Prato: {{prato.nome}}</p></a>
+          <p>Prato: {{prato.nome}}</p>
           <p>Ingredientes: {{prato.ingredientes}}</p>
           <p>Valor: {{prato.valor}}</p>
+          <a class="btn btn-default" href="{% url 'prato_editar' pk=prato.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
           <hr>
       </div>
-    {% endfor %}
+
 {% endblock content %}
