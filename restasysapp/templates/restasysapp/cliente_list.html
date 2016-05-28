@@ -1,0 +1,11 @@
+{% extends 'restasysapp/base.html' %}
+
+{% block content %}
+    {% for cliente in clientes %}
+      <div class="cli">
+          <p>Cliente: {{cliente}}</p>
+          <p>E-mail: {{cliente.email}}</p>
+          <hr>
+      </div>
+    {% endfor %}
+{% endblock content %}

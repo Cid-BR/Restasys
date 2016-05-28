@@ -1,0 +1,29 @@
+{% extends 'restasysapp/base.html' %}
+
+{% block content %}
+    <h1>Novo Pedido</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+      <div class="form-group col-md-12">
+        <label>Cliente</label>
+        {{ form.cliente }}
+      </div>
+
+      <div class="form-group col-md-12">
+        <label>Prato</label>
+        {{ form.pratos }}
+      </div>
+      <div class="form-group col-md-3">
+        <label>Valor Total</label>
+        {{ form.total }}
+      </div>
+
+      <div class="form-group col-md-3">
+        <label>Data</label>
+        {{ form.data }}
+      </div>
+
+      <div class="form-group col-md-4">
+        <button type="submit" class="save btn btn-default">Realizar Pedido</button>
+      </div>
+    </form>
+{% endblock %}

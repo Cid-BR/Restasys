@@ -1,0 +1,28 @@
+{% extends 'restasysapp/base.html' %}
+
+{% block content %}
+      <div class="">
+          <table border="0">
+            <tr>
+              <td width=80%><h1>Gerenciamento</h1></td>
+              <td><h1>Consultas</h1></td>
+            </tr>
+
+            <tr>
+              <td><h1><a href="{% url 'restasysapp.views.mesa_novo' %}" class="btn btn-success">Cadastrar nova mesa</a></h1></td>
+
+            </tr>
+
+            <tr>
+              <td><h1><a href="{% url 'restasysapp.views.prato_novo' %}" class="btn btn-success">Cadastrar Pratos</a></h1></td>
+
+            </tr>
+
+            <tr>
+              <td><h1><a href="{% url 'restasysapp.views.pedido_novo' %}" class="btn btn-success">Fazer novo pedido</a></h1></td>
+
+            </tr>
+         </table>
+      </div>
+
+{% endblock content %}

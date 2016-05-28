@@ -1,0 +1,13 @@
+{% extends 'restasysapp/base.html' %}
+
+{% block content %}
+    {% for pedido in pedidos %}
+      <div class="pedido">
+          <p>Cliente: {{pedido.cliente}}</p>
+          <p>Prato: {{pedido.pratos}}</p>
+          <p>Valor total: {{pedido.total}}</p>
+          <p>Data: {{pedido.data}}</p>
+          <hr>
+      </div>
+    {% endfor %}
+{% endblock content %}
