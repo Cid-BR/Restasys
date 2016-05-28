@@ -1,14 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 from .models import Mesa, Pratos, Pedidos, Pedidos_Fechados
 from .forms import MesaForm, PratosForm, PedidosForm
 
 
 def index(request):
     return render(request, 'restasysapp/home.html', {})
-
-def cliente_list(request):
-    clientes = Cliente.objects.all()
-    return render(request, 'restasysapp/cliente_list.html', {'clientes':clientes})
 
 def mesa_novo(request):
     if request.method == "POST":
@@ -39,3 +36,19 @@ def pedido_novo(request):
     else:
         form = PedidosForm()
     return render(request, 'restasysapp/pedido_novo.html', {'form': form})
+
+def mesa_list(request):
+    mesas = Mesa.objects.all()
+    return render(request, 'restasysapp/mesa_list.html', {'mesas':mesas})
+
+def pratos_list(request):
+    pratos = Pratos.objects.all()
+    return render(request, 'restasysapp/pratos_list.html', {'pratos':pratos})
+
+def pedidos_list(request):
+    pedidos = Pedidos.objects.all()
+    return render(request, 'restasysapp/pedidos_list.html', {'pedidos':pedidos})
+
+def mesa_detalhe(request, pk):
+    mesa = get_object_or_404(Mesa, pk=pk)
+    return render(request, 'restasysapp/mesa_detalhe.html', {'mesa':mesa})

@@ -2,11 +2,10 @@
 
 {% block content %}
     {% for prato in pratos %}
-      <div class="prato">
-          <p>Pratos: {{prato.nome}}</p>
-          <p>Preço: {{prato.preco}}</p>
+      <div class="pratos">
+          <p>Prato: {{prato.nome}}</p>
           <p>Ingredientes: {{prato.ingredientes}}</p>
-          <p>Código do prato: {{prato.codigo}}</p>
+          <p>Valor: {{prato.valor}}</p>
           <hr>
       </div>
     {% endfor %}

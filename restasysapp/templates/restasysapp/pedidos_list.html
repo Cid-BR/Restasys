@@ -3,10 +3,9 @@
 {% block content %}
     {% for pedido in pedidos %}
       <div class="pedido">
-          <p>Cliente: {{pedido.cliente}}</p>
-          <p>Prato: {{pedido.pratos}}</p>
-          <p>Valor total: {{pedido.total}}</p>
-          <p>Data: {{pedido.data}}</p>
+          <p>Mesa: {{pedido.mesa_id}}</p>
+          <p>Prato: {{pedido.pratos_id}}</p>
+          <p>Valor total: {{pedido.valor_total}}</p>
           <hr>
       </div>
     {% endfor %}
