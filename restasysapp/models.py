@@ -26,4 +26,4 @@ class Pedidos_Fechados(models.Model):
     pedidos_id = models.ForeignKey('Pedidos')
 
     def __str__(self):
-        return self.pedidos_id
+        return self.pedidos_id.mesa_id

@@ -13,10 +13,14 @@
         {{ form.pratos_id }}
       </div>
 
+      {% if pratos_id.nome == pratos_id.valor %}
+      {% for pedido in pedidos %}
       <div class="form-group col-md-6">
         <label>Valor total</label>
-        {{ form.valor_total }}
+        {{ pedidos.pratos_id.valor }}
       </div>
+      {% endfor %}
+      {% endif %}
 
       <div class="form-group col-md-12">
         <button type="submit" class="save btn btn-default">Salvar</button>
