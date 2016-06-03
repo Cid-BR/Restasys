@@ -7,7 +7,8 @@
         <p>Prato: {{pedido.pratos_id}}</p>
         <p>Valor total: {{pedido.valor_total}}</p>
         <a class="btn btn-default" href="{% url 'pedido_editar' pk=pedido.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-          <hr>
+        <a class="btn btn-default" href="{% url 'fechar_pedido' %}"><span class="glyphicon glyphicon-ok"></span></a>
+        <hr>
       </div>
 
 {% endblock content %}

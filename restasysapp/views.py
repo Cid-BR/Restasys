@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 from .models import Mesa, Pratos, Pedidos, Pedidos_Fechados
-from .forms import MesaForm, PratosForm, PedidosForm
+from .forms import MesaForm, PratosForm, PedidosForm, PedidoFechadoForm
 
 
 def index(request):
@@ -96,3 +96,17 @@ def pedido_editar(request, pk):
     else:
         form = PedidosForm(instance=pedido)
     return render(request, 'restasysapp/pedido_novo.html', {'form': form})
+
+def fechar_pedido(request):
+    if request.method == "POST":
+        form = PedidoFechadoForm(request.POST)
+        if form.is_valid():
+            fechar = form.save()
+            form = PedidoFechadoForm()
+    else:
+        form = PedidoFechadoForm()
+    return render(request, 'restasysapp/fechar_pedido.html', {'form': form})
+
+def fechado_list(request):
+    fechados = Pedidos_Fechados.objects.all()
+    return render(request, 'restasysapp/pedidos_fechados_list.html', {'fechados':fechados})

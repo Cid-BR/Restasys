@@ -1,0 +1,10 @@
+{% extends 'restasysapp/base.html' %}
+
+{% block content %}
+    {% for fechado in fechados %}
+      <div class="fechados">
+          <p>Pedios: {{fechado.pedidos_id}}</p>
+          <hr>
+      </div>
+    {% endfor %}
+{% endblock content %}

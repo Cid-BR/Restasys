@@ -1,6 +1,7 @@
 {% extends 'restasysapp/base.html' %}
 
 {% block content %}
+
     {% for pedido in pedidos %}
       <div class="pedido">
           <a href="{% url 'restasysapp.views.pedido_detalhe' pk=pedido.pk %}"><p>Mesa: {{pedido.mesa_id}}</p></a>
@@ -9,4 +10,5 @@
           <hr>
       </div>
     {% endfor %}
+
 {% endblock content %}

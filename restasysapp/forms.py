@@ -18,3 +18,9 @@ class PedidosForm(forms.ModelForm):
     class Meta:
         model = Pedidos
         fields = ('mesa_id', 'pratos_id', 'valor_total')
+
+class PedidoFechadoForm(forms.ModelForm):
+
+    class Meta:
+        model = Pedidos_Fechados
+        fields = ('pedidos_id',)

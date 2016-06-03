@@ -1,0 +1,15 @@
+{% extends 'restasysapp/base.html' %}
+
+{% block content %}
+    <h1>Fechar Pedido</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+      <div class="form-group col-md-6">
+        <label>Pedido</label>
+        {{ form.pedidos_id }}
+      </div>
+
+      <div class="form-group col-md-12">
+        <button type="submit" class="save btn btn-default">Fechar</button>
+      </div>
+    </form>
+{% endblock %}

@@ -15,5 +15,8 @@ urlpatterns = [
     url(r'^prato/(?P<pk>[0-9]+)/edit/$', views.prato_editar, name='prato_editar'),
     url(r'^pedido/(?P<pk>[0-9]+)/$', views.pedido_detalhe),
     url(r'^pedido/(?P<pk>[0-9]+)/edit/$', views.pedido_editar, name='pedido_editar'),
+    url(r'^pedido/fechar/$', views.fechar_pedido, name='fechar_pedido'),
+    url(r'^fechados/list/$', views.fechado_list, name='fechado_list'),
+
 
 ]

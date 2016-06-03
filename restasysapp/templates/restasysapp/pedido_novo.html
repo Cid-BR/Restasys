@@ -1,7 +1,7 @@
 {% extends 'restasysapp/base.html' %}
 
 {% block content %}
-    <h1>Novo Prato</h1>
+    <h1>Novo Pedido</h1>
     <form method="POST" class="post-form">{% csrf_token %}
       <div class="form-group col-md-6">
         <label>Mesa</label>
@@ -13,14 +13,11 @@
         {{ form.pratos_id }}
       </div>
 
-      {% if pratos_id.nome == pratos_id.valor %}
-      {% for pedido in pedidos %}
       <div class="form-group col-md-6">
         <label>Valor total</label>
-        {{ pedidos.pratos_id.valor }}
+        {{ form.valor_total}}
       </div>
-      {% endfor %}
-      {% endif %}
+
 
       <div class="form-group col-md-12">
         <button type="submit" class="save btn btn-default">Salvar</button>
